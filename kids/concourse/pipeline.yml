@@ -5,15 +5,15 @@ resource_types:
     repository: patrickcrocker/maven-resource
     tag: latest
 resources:
-- name: rnr-be
+- name: coolschool-kids
   type: git
   source:
-    username: 450987
-    password: M4t14sM1s13g0@29081977
+    username: jmmisiegoruiz
+    password: M4r1414011952
     uri: {{git-source-repository-url}}
-    branch: sprint/sprint1
+    branch: master
     paths:
-    - .
+    - ./kids
 - name: version
   type: semver
   source:
@@ -35,10 +35,10 @@ jobs:
 - name: build
   max_in_flight: 1
   plan:
-  - get: rnr-be
+  - get: coolschool-kids
     trigger: true
   - task: unit
-    file: rnr-be/concourse/unit/unit.yml
+    file: concourse/unit/unit.yml
   - get: version
     params: { pre: RC }
   - put: snapshot
