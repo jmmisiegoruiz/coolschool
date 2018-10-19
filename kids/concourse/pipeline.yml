@@ -44,5 +44,5 @@ jobs:
   - put: snapshot
     params:
       file: release/kids-0.0.1-SNAPSHOT.jar
-      pom_file: coolschool-kids/pom.xml
+      pom_file: coolschool-kids/kids/pom.xml
       version_file: version/version
