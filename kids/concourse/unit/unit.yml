@@ -16,5 +16,6 @@ run:
   args:
   - -exc
   - |
-    mvn clean package \
+    cd kids \
+    && mvn clean package \
     && mv target/kids-0.0.1-SNAPSHOT.jar ../release/kids-0.0.1-SNAPSHOT.jar \
