@@ -31,6 +31,15 @@ resources:
     artifact: io.coolschool:kids:jar
     username: {{artifactory-username}}
     password: {{artifactory-password}}
+- name: cf-deploy-release
+  type: cf
+  source:
+    api: {{cf-url}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-org}}
+    space: {{cf-space}}
+    skip_cert_check: false
 - name: pipeline-tasks
   type: git
   source:
