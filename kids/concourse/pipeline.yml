@@ -21,7 +21,7 @@ resources:
     initial_version: 1.0.0-RC.0
     uri: {{git-version-repository-url}}
     branch: version
-    file: version
+    file: coolschool-kids
     username: 'jmmisiegoruiz'
     password: M4r1414011952
 - name: snapshot
