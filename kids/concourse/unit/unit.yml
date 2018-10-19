@@ -20,5 +20,5 @@ run:
     && mvn -s maven/settings-artifactory.xml clean install \
     && cd ../kids \
     && mvn -s ../parent/maven/settings-artifactory.xml clean package \
-    && ls -la
+    && ls -la target \
     && mv target/kids-0.0.1-SNAPSHOT.jar ../release/kids-0.0.1-SNAPSHOT.jar \
