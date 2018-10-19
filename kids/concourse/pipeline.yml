@@ -1,0 +1,48 @@
+resource_types:
+- name: maven-resource
+  type: docker-image
+  source:
+    repository: patrickcrocker/maven-resource
+    tag: latest
+resources:
+- name: rnr-be
+  type: git
+  source:
+    username: 450987
+    password: M4t14sM1s13g0@29081977
+    uri: {{git-source-repository-url}}
+    branch: sprint/sprint1
+    paths:
+    - .
+- name: version
+  type: semver
+  source:
+    driver: git
+    initial_version: 1.0.0-RC.0
+    uri: {{git-version-repository-url}}
+    branch: version
+    file: rnr-be
+    username: '450987'
+    password: M4t14sM1s13g0@29081977
+- name: snapshot
+  type: maven-resource
+  source:
+    url: {{artifactory-url}}
+    artifact: com.cognizant:cts_rnr_app.backend:jar
+    username: {{artifactory-username}}
+    password: {{artifactory-password}}
+jobs:
+- name: build
+  max_in_flight: 1
+  plan:
+  - get: rnr-be
+    trigger: true
+  - task: unit
+    file: rnr-be/concourse/unit/unit.yml
+  - get: version
+    params: { pre: RC }
+  - put: snapshot
+    params:
+      file: release/cts_rnr_app.backend-0.0.1-SNAPSHOT.jar
+      pom_file: rnr-be/pom.xml
+      version_file: version/version
