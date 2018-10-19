@@ -38,7 +38,7 @@ jobs:
   - get: coolschool-kids
     trigger: true
   - task: unit
-    file: concourse/unit/unit.yml
+    file: kids/concourse/unit/unit.yml
   - get: version
     params: { pre: RC }
   - put: snapshot
