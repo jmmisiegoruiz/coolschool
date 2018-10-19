@@ -31,6 +31,11 @@ resources:
     artifact: io.coolschool:kids:jar
     username: {{artifactory-username}}
     password: {{artifactory-password}}
+- name: pipeline-tasks
+  type: git
+  source:
+    uri: https://github.com/Pivotal-Field-Engineering/pipeline-tasks
+    branch: master
 jobs:
 - name: build
   max_in_flight: 1
@@ -46,3 +51,24 @@ jobs:
       file: release/kids-0.0.1-SNAPSHOT.jar
       pom_file: coolschool-kids/kids/pom.xml
       version_file: version/version
+- name: release
+  serial: true
+  plan:
+  - get: snapshot
+    trigger: true
+    passed: [build]
+  - get: coolschool-kids
+    passed: [build]
+  - get: version
+    passed: [build]
+  - get: pipeline-tasks
+  - task: prepare-manifest
+    file: coolschool-kids/kids/concourse/release/prepare.yml
+    params:
+      MF_PATH: ../release-output/coolschool-kids.jar
+      MF_BUILDPACK: java_buildpack
+  - task: prepare-release
+    file: coolschool-kids/kids/concourse/release/release.yml
+  - put: cf-deploy-release
+    params:
+      manifest: task-output/manifest.yml

@@ -1,14 +1,14 @@
 # The Cloud Foundry credentials where the microservice will be deployed
 cf-url: https://api.run.pivotal.io
-cf-username: replace
-cf-password: replace
-cf-org: replace
-cf-space: replace
+cf-username: josematias.misiegoruiz@cognizant.com
+cf-password: M4t14sM1s13g0@29081977
+cf-org: cognizant-java-cloud
+cf-space: development
 
 # The Maven repository where versioned artifacts will be published
-artifactory-url: http://127.0.0.1:8081/artifactory/libs-release-local
+artifactory-url: http://10.213.14.136:9191/artifactory/libs-release-local
 artifactory-username: admin
-artifactory-password: M4t14sM1s13g0@29081977
+artifactory-password: admin
 
 # The git repository containing the microservice source code
 git-source-repository-url: https://github.com/jmmisiegoruiz/coolschool.git
