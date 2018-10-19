@@ -14,7 +14,7 @@ artifactory-password: M4t14sM1s13g0@29081977
 git-source-repository-url: https://github.com/jmmisiegoruiz/coolschool.git
 
 # The git repository containing the version file
-git-version-repository-url: https://code.cognizant.com/450987/BE
+git-version-repository-url: https://github.com/jmmisiegoruiz/coolschool.git
 git-version-private-key: |
   -----BEGIN RSA PRIVATE KEY-----
   REPLACE

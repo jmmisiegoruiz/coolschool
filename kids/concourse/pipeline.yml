@@ -21,14 +21,14 @@ resources:
     initial_version: 1.0.0-RC.0
     uri: {{git-version-repository-url}}
     branch: version
-    file: rnr-be
-    username: '450987'
-    password: M4t14sM1s13g0@29081977
+    file: version
+    username: 'jmmisiegoruiz'
+    password: M4r1414011952
 - name: snapshot
   type: maven-resource
   source:
     url: {{artifactory-url}}
-    artifact: com.cognizant:cts_rnr_app.backend:jar
+    artifact: io.coolschool:kids:jar
     username: {{artifactory-username}}
     password: {{artifactory-password}}
 jobs:
@@ -43,6 +43,6 @@ jobs:
     params: { pre: RC }
   - put: snapshot
     params:
-      file: release/cts_rnr_app.backend-0.0.1-SNAPSHOT.jar
-      pom_file: rnr-be/pom.xml
+      file: release/kids-0.0.1-SNAPSHOT.jar
+      pom_file: coolschool-kids/pom.xml
       version_file: version/version
