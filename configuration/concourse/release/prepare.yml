@@ -1,0 +1,26 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: patrickcrocker/cf-cli-resource
+    tag: 'latest'
+
+params:
+  MF_NAME: coolschool-configuration
+  MF_DOMAIN: cfapps.io
+  MF_BUILDPACK: java_buildpack
+  MF_HOST: coolschool-configuration
+  MF_INSTANCES: 1
+  MF_MEMORY: 1024M
+  MF_PATH:
+
+inputs:
+- name: pipeline-tasks
+
+outputs:
+- name: task-output
+
+run:
+  path: pipeline-tasks/generate-manifest/task.sh
