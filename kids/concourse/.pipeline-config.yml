@@ -6,7 +6,7 @@ cf-org: cognizant-java-cloud
 cf-space: development
 
 # The Maven repository where versioned artifacts will be published
-artifactory-url: http://10.213.15.143:9191/artifactory/libs-release-local
+artifactory-url: http://192.168.0.12:9191/artifactory/libs-release-local
 artifactory-username: admin
 artifactory-password: admin
 

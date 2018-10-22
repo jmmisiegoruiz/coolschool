@@ -60,6 +60,8 @@ jobs:
       file: release/kids-0.0.1-SNAPSHOT.jar
       pom_file: coolschool-kids/kids/pom.xml
       version_file: version/version
+  - put: version
+    params: { file: version/version }
 - name: release
   serial: true
   plan:
