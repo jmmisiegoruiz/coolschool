@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-fly -t rnr login -c http://127.0.0.1:8080 -u test -p test
-fly -t rnr set-pipeline -p coolschool-kids -c pipeline.yml -l .pipeline-config.yml
+fly -t coolschool login -c http://dev-box:8181/ -u admin -p admin
+fly -t coolschool set-pipeline -p coolschool-kids -c pipeline.yml -l .pipeline-config.yml

@@ -1,12 +1,12 @@
 # The Cloud Foundry credentials where the microservice will be deployed
-cf-url: https://api.run.pivotal.io
-cf-username: josematias.misiegoruiz@cognizant.com
-cf-password: M4t14sM1s13g0@29081977
-cf-org: cognizant-java-cloud
-cf-space: development
+cf-url: https://api.local.pcfdev.io
+cf-username: user
+cf-password: pass
+cf-org: pcfdev-org
+cf-space: pcfdev-space
 
 # The Maven repository where versioned artifacts will be published
-artifactory-url: http://192.168.0.12:9191/artifactory/libs-release-local
+artifactory-url: http://artifactory:8081/artifactory/libs-release-local
 artifactory-username: admin
 artifactory-password: admin
 

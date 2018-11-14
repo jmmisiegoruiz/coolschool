@@ -9,7 +9,7 @@ image_resource:
 
 params:
   MF_NAME: coolschool-kids
-  MF_DOMAIN: cfapps.io
+  MF_DOMAIN: local.pcfdev.io
   MF_BUILDPACK: java_buildpack
   MF_HOST: coolschool-kids
   MF_INSTANCES: 1
